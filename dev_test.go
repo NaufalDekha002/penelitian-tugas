@@ -64,12 +64,12 @@ func TestGetPenelitiFromPhoneNumber(t *testing.T) {
 
 func TestGetHasilTelitiFromNama(t *testing.T) {
 	nama := "Chemical Project"
-	objek_teliti := module.GetHasilTelitiFromNama(nama, module.MongoConn, "hasil")
+	objek_teliti := module.GetHasilTelitiFromNama(nama, module.MongoConn, "hasil teliti")
 	fmt.Println(objek_teliti)
 }
 
 func TestGetPresensiFromPhoneNumber(t *testing.T) {
-	phone_number := "083543242546"
-	absen := module.GetHasilTelitiFromNama(phone_number, module.MongoConn, "absen")
+	phone_number := "Gedung 300"
+	absen := module.GetHasilTelitiFromNama(phone_number, module.MongoConn, "hasil")
 	fmt.Println(absen)
 }
