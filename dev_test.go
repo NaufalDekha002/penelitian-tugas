@@ -67,3 +67,8 @@ func TestGetHasilTelitiFromNama(t *testing.T) {
 	objek_teliti := module.GetHasilTelitiFromNama(nama, module.MongoConn, "hasil teliti")
 	fmt.Println(objek_teliti)
 }
+
+func TestGetAllPresensi(t *testing.T) {
+	objek_teliti := module.GetAllPresensi(module.MongoConn, "hasil")
+	fmt.Println(objek_teliti)
+}
