@@ -93,7 +93,7 @@ func GetHasilTelitiFromNama(nama string, db *mongo.Database, col string) (objek_
 	filter := bson.M{"location": nama}
 	err := hasilteliti.FindOne(context.TODO(), filter).Decode(&objek_teliti)
 	if err != nil {
-		fmt.Printf("GetPresensiFromHasilteliti: %v\n", err)
+		fmt.Printf("GetHasilTelitiFromNama: %v\n", err)
 	}
 	return objek_teliti
 }
