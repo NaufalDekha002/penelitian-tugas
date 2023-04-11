@@ -90,7 +90,7 @@ func GetPenelitiFromJabatan(jabatan string, db *mongo.Database, col string) (sta
 
 func GetHasilTelitiFromNama(nama string, db *mongo.Database, col string) (objek_teliti model.HasilTeliti) {
 	hasilteliti := db.Collection(col)
-	filter := bson.M{"location": nama}
+	filter := bson.M{"nama": nama}
 	err := hasilteliti.FindOne(context.TODO(), filter).Decode(&objek_teliti)
 	if err != nil {
 		fmt.Printf("GetHasilTelitiFromNama: %v\n", err)
