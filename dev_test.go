@@ -10,9 +10,9 @@ import (
 )
 
 func TestInsertPeneliti(t *testing.T) {
-	nama := "Dekha Widana"
+	nama := "Salsabila Irbah"
 	phone_number := "083543242546"
-	jabatan := "Head Data Analyst"
+	jabatan := "Chemical Analyst"
 	JadwalPenelitian := "Data Field Cross Check"
 
 	hasil := module.InsertPeneliti(module.MongoConn, "peneliti", nama, phone_number, jabatan, JadwalPenelitian)
@@ -37,7 +37,7 @@ func TestInsertJadwal(t *testing.T) {
 }
 
 func TestInsertHasilTeliti(t *testing.T) {
-	nama := "Big Data Project"
+	nama := "Chemical Project"
 	hasil := module.InsertHasilTeliti(module.MongoConn, "hasil teliti", nama)
 	fmt.Println(hasil)
 }
@@ -47,9 +47,9 @@ func TestInsertPresensi(t *testing.T) {
 	phone_number := "083543242546"
 	checkin := "Masuk"
 	biodata := model.Peneliti{
-		Nama:             "Dekha Widana",
+		Nama:             "Salsabila Irbah",
 		Phone_number:     "083543242546",
-		Jabatan:          "Head Data Analyst",
+		Jabatan:          "Head Chemical Analyst",
 		JadwalPenelitian: "Data Field Cross Check",
 	}
 	absen := module.InsertPresensi(module.MongoConn, "hasil", location, phone_number, checkin, biodata)
@@ -63,13 +63,13 @@ func TestGetPenelitiFromPhoneNumber(t *testing.T) {
 }
 
 func TestGetHasilTelitiFromNama(t *testing.T) {
-	nama := "Big Data Project"
+	nama := "Chemical Project"
 	objek_teliti := module.GetHasilTelitiFromNama(nama, module.MongoConn, "hasil")
 	fmt.Println(objek_teliti)
 }
 
 func TestGetPresensiFromPhoneNumber(t *testing.T) {
 	phone_number := "083543242546"
-	absen := module.GetHasilTelitiFromNama(phone_number, module.MongoConn, "hasil")
+	absen := module.GetHasilTelitiFromNama(phone_number, module.MongoConn, "absen")
 	fmt.Println(absen)
 }
